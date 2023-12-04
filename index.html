@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Frontend mentor interactive card solution" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <h1 class="sr-only">Interactive Card Details Form</h1>
+    <main class="grid-container">
+      <div class="cards-container" aria-hidden="true">
+        <!-- Card Front -->
+        <div class="card card-front">
+          <img src="./images/bg-card-front.png" class="card-img" alt="" />
+          <img src="./images/card-logo.svg" alt="" class="logo" />
+          <span id="card-number">0000 0000 0000 0000</span>
+          <div class="card-name-expirary-container">
+            <p id="card-name">Jane Appleseed</p>
+            <p id="expiray-date"><span id="mm">00</span><span id="yy">/00</span></p>
+          </div>
+        </div>
+        <!-- Card Back -->
+        <div class="card card-back">
+          <img src="./images/bg-card-back.png" class="card-img" alt="" />
+          <span id="ccv">000</span>
+        </div>
+      </div>
+      <form action="#" id="form">
+        <label for="fname">Cardholder Name</label>
+        <input type="text" id="fname" name="fname" placeholder="e.g. Jane Appleseed" maxlength="30" required aria-label="Enter the name that is on your Card" />
+        <div class="error-container" id="cardNameError"></div>
+        <br />
+
+        <label for="card-16-digit">Card Number</label>
+        <input type="text" id="card-16-digit" name="card-16-digit" placeholder="e.g. 1234 5678 9123 0000" minlength="19" maxlength="19" inputmode="numeric" required aria-label="Enter the 16 digit number that is on your Card" />
+        <div class="error-container" id="cardNumberError"></div>
+        <br />
+
+        <section>
+          <fieldset class="fieldset-month-year">
+            <legend class="sr-only">Expiration date month and year on your card</legend>
+            <label for="date-mm">EXP. DATE (MM/YY)</label>
+            <input type="text" id="date-mm" name="date-mm" placeholder="MM" minlength="2" maxlength="2" inputmode="numeric" required aria-label="Enter the two digits for the month that your card expires" />
+            <div class="error-container" id="monthError"></div>
+
+            <label for="date-yy" class="sr-only">Year</label>
+            <input type="text" id="date-yy" name="date-yy" placeholder="YY" minlength="2" maxlength="2" inputmode="numeric" required aria-label="Enter the two digits for the year that your card expires" />
+            <div class="error-container" id="yearError"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="sr-only">Enter the CVC number on your card</legend>
+            <label for="cvc-input">CVC</label>
+            <input type="text" id="cvc-input" name="cvc-input" placeholder="e.g. 123" minlength="3" maxlength="3" inputmode="numeric" required aria-label="Enter the three digit CVC number that is on your card " />
+            <div class="error-container" id="cvcError"></div>
+          </fieldset>
+        </section>
+
+        <button type="submit" value="Submit" id="btn-submit">Confirm</button>
+      </form>
+
+      <div id="form-complete-message" class="hide">
+        <img src="./images/icon-complete.svg" alt="" />
+        <h2>Thank You!</h2>
+        <p>We've added your card details</p>
+        <button type="submit" id="btn-continue">Continue</button>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
