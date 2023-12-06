@@ -30,34 +30,33 @@
       </div>
       <form action="#" id="form">
         <label for="fname">Cardholder Name</label>
-        <input type="text" id="fname" name="fname" placeholder="e.g. Jane Appleseed" maxlength="30" required aria-label="Enter the name that is on your Card" />
+        <input type="text" id="fname" name="fname" placeholder="e.g. Jane Appleseed" maxlength="30" required />
         <div class="error-container" id="cardNameError"></div>
         <br />
 
         <label for="card-16-digit">Card Number</label>
-        <input type="text" id="card-16-digit" name="card-16-digit" placeholder="e.g. 1234 5678 9123 0000" minlength="19" maxlength="19" inputmode="numeric" required aria-label="Enter the 16 digit number that is on your Card" />
+        <input type="text" id="card-16-digit" name="card-16-digit" placeholder="e.g. 1234 5678 9123 0000" minlength="19" maxlength="19" inputmode="numeric" required />
         <div class="error-container" id="cardNumberError"></div>
         <br />
 
-        <section>
+        <div class="section">
           <fieldset class="fieldset-month-year">
-            <legend class="sr-only">Expiration date month and year on your card</legend>
-            <label for="date-mm">EXP. DATE (MM/YY)</label>
-            <input type="text" id="date-mm" name="date-mm" placeholder="MM" minlength="2" maxlength="2" inputmode="numeric" required aria-label="Enter the two digits for the month that your card expires" />
-            <div class="error-container" id="monthError"></div>
+            <legend>EXP. DATE (MM/YY)</legend>
+            <label for="date-mm" class="sr-only">Month</label>
+            <input type="text" id="date-mm" name="date-mm" placeholder="MM" minlength="2" maxlength="2" inputmode="numeric" required aria-describedby="monthError" />
+            <div class="error-container" id="monthError" aria-live="polite"></div>
 
             <label for="date-yy" class="sr-only">Year</label>
-            <input type="text" id="date-yy" name="date-yy" placeholder="YY" minlength="2" maxlength="2" inputmode="numeric" required aria-label="Enter the two digits for the year that your card expires" />
-            <div class="error-container" id="yearError"></div>
+            <input type="text" id="date-yy" name="date-yy" placeholder="YY" minlength="2" maxlength="2" inputmode="numeric" required aria-describedby="yearError" />
+            <div class="error-container" id="yearError" aria-live="polite"></div>
           </fieldset>
 
-          <fieldset>
-            <legend class="sr-only">Enter the CVC number on your card</legend>
+          <div>
             <label for="cvc-input">CVC</label>
-            <input type="text" id="cvc-input" name="cvc-input" placeholder="e.g. 123" minlength="3" maxlength="3" inputmode="numeric" required aria-label="Enter the three digit CVC number that is on your card " />
-            <div class="error-container" id="cvcError"></div>
-          </fieldset>
-        </section>
+            <input type="text" id="cvc-input" name="cvc-input" placeholder="e.g. 123" minlength="3" maxlength="3" inputmode="numeric" required aria-describedby="cvcError" />
+            <div class="error-container" id="cvcError" aria-live="polite"></div>
+          </div>
+        </div>
 
         <button type="submit" value="Submit" id="btn-submit">Confirm</button>
       </form>
